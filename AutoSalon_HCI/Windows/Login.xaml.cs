@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using AutoSalon_HCI.Database;
 using AutoSalon_HCI.Pages;
 
@@ -16,12 +17,18 @@ namespace AutoSalon_HCI.Windows
         private void LoginButton(object sender, RoutedEventArgs e)
         {
             string username = UsernameTextBox.Text;
-            string password = PasswordBox.Password;
-            if (ProdavacDatabase.CheckLogin(username, password))
+            string password = PasswordPasswordBox.Password;
+            App.prodavacId = ProdavacDatabase.CheckLogin(username, password);
+            if (App.prodavacId!=0)
             {
+                ProdavacDatabase.GetUlogaById(App.prodavacId);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 Close();
+            }
+            else
+            {
+                MessageBox.Show("Pogresni podaci");
             }
         }
     }

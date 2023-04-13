@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using AutoSalon_HCI.Models;
 
 namespace AutoSalon_HCI.Pages
@@ -8,5 +10,7 @@ namespace AutoSalon_HCI.Pages
     /// </summary>
     public partial class App
     {
+        public static int prodavacId = 0;
+        public static bool isAdmin = false;
     }
 }

@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
+using AutoSalon_HCI.Database;
+using AutoSalon_HCI.Models;
 
 namespace AutoSalon_HCI.Windows
 {
@@ -7,6 +10,7 @@ namespace AutoSalon_HCI.Windows
         public OrderList()
         {
             InitializeComponent();
+            NarudzbeListView.ItemsSource = AutomobilDatabase.NarudzbaAutomobilGetAll();
         }
     }
 }

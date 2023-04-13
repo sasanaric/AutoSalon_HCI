@@ -4,9 +4,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AutoSalon_HCI.Windows"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="Order" Height="450" Width="800">
+        Title="Order" Height="600" Width="500">
     <Grid>
-        
-    </Grid>
+        <Label FontSize="30" HorizontalAlignment="Center">Narudzba</Label>
+        <Grid HorizontalAlignment="Center" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="Width" Value="250"/>
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                    </Style>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Width" Value="100"/>
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="FontSize" Value="20"/>
+                    </Style>
+                </Grid.Resources>
+                <Label Grid.Row="0" Grid.Column="0" Margin="0 0 20 0">Proizvodjač:</Label>
+                    <ComboBox Grid.Row="0" Grid.Column="1" SelectionChanged="SetProizvodjac" x:Name="ProizvodjaciComboBox" Width="150"
+                              ItemsSource="{Binding Proizvodjac}" DisplayMemberPath="naziv" SelectedValuePath="id" >
+                    </ComboBox>
+                <Label Grid.Row="1" Grid.Column="0" Margin="0 0 20 0">Model:</Label>
+                    <ComboBox Grid.Row="1" Grid.Column="1" SelectionChanged="SetModel" x:Name="ModeliComboBox" Width="150"
+                              ItemsSource="{Binding Model}" DisplayMemberPath="naziv" SelectedValuePath="id" >
+                    </ComboBox>
+                <Label Grid.Row="2" Grid.Column="0" Margin="0 0 20 0">Motor:</Label>
+                <ComboBox Grid.Row="2" Grid.Column="1" SelectionChanged="SetMotor" x:Name="MotoriComboBox" Width="150"
+                          ItemsSource="{Binding Motor}" DisplayMemberPath="tip" SelectedValuePath="id" >
+                </ComboBox>
+                <Label Grid.Row="3" Grid.Column="0" Margin="0 0 20 0">Boja:</Label>
+                <ComboBox Grid.Row="3" Grid.Column="1" SelectionChanged="SetBoja" x:Name="BojeComboBox" Width="150"
+                          ItemsSource="{Binding Boja}" DisplayMemberPath="naziv" SelectedValuePath="id" >
+                </ComboBox>
+                <Label Grid.Row="4" Grid.Column="0" Margin="0 0 20 0">Oprema:</Label>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="OpremaTextBox" Width="150" Style="{StaticResource RadiusTextBox}" Margin="10 0 0 0"/>
+                <Label Grid.Row="5" Grid.Column="0" Margin="0 0 20 0">Cijena:</Label>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="CijenaTextBox" IsReadOnly="True" Width="150" Style="{StaticResource RadiusTextBox}" Margin="10 0 0 0"/>
+                <Label Grid.Row="6" Grid.Column="0" Margin="0 0 20 0">Kupac:</Label>
+                <ComboBox Grid.Row="6" Grid.Column="1" SelectionChanged="SetKupac" x:Name="KupciComboBox" Width="150"
+                          ItemsSource="{Binding Kupac}" DisplayMemberPath="ImePrezime" SelectedValuePath="id" >
+                </ComboBox>
+            </Grid>
+        <Button Click="NaruciButton" Height="40" Width="150" FontSize="20" VerticalAlignment="Bottom" Margin="0 0 0 10">Naruči</Button>
+        </Grid>
 </Window>

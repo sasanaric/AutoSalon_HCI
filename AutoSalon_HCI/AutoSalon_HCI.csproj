@@ -82,11 +82,19 @@
         <Reference Include="PresentationFramework" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Database\DatabaseAutoSalon.cs" />
+        <Compile Include="Database\AutomobilDatabase.cs" />
+        <Compile Include="Database\KupacDatabase.cs" />
         <Compile Include="Database\ProdavacDatabase.cs" />
         <Compile Include="Database\ProizvodjacDatabase.cs" />
+        <Compile Include="Models\Automobil.cs" />
+        <Compile Include="Models\Boja.cs" />
+        <Compile Include="Models\Kupac.cs" />
+        <Compile Include="Models\Model.cs" />
+        <Compile Include="Models\Motor.cs" />
+        <Compile Include="Models\NarudzbaAutomobil.cs" />
         <Compile Include="Models\Program.cs" />
         <Compile Include="Models\Proizvodjac.cs" />
+        <Compile Include="Models\Registracija.cs" />
         <Compile Include="Windows\AddCustomer.xaml.cs">
           <DependentUpon>AddCustomer.xaml</DependentUpon>
         </Compile>

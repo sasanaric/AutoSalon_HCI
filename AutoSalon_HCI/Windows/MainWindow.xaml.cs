@@ -2,6 +2,7 @@
 using System.Windows;
 using AutoSalon_HCI.Database;
 using AutoSalon_HCI.Models;
+using AutoSalon_HCI.Pages;
 
 namespace AutoSalon_HCI.Windows
 {
@@ -13,6 +14,10 @@ namespace AutoSalon_HCI.Windows
         public MainWindow()
         {
             InitializeComponent();
+            if (!App.isAdmin)
+            {
+                KonfiguracijaButton.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Order(object sender, RoutedEventArgs e)

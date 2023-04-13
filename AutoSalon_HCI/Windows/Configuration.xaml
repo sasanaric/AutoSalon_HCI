@@ -3,10 +3,71 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:AutoSalon_HCI.Windows"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="Configuration" Height="450" Width="800">
-    <Grid>
-        
+        Title="Configuration" Height="500" Width="800">
+    <Grid HorizontalAlignment="Left" Margin="40 10 0 50 ">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="ComboBox">
+                <Setter Property="Width" Value="250"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="0 0 20 0">Proizvodjac:</Label>
+            <TextBox x:Name="ProizvodjacTextBox" Style="{StaticResource RadiusTextBox}" Width="150" 
+                     Margin="0 0 20 0"></TextBox>
+            <Button x:Name="ProizvodjacButton" Click="AddProizvodjac">Dodaj</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Margin="0 0 20 0">Model:</Label>
+            <ComboBox SelectionChanged="SetProizvodjac" x:Name="ProizvodjaciComboBox" Width="150"
+                      ItemsSource="{Binding Proizvodjac}" DisplayMemberPath="naziv" SelectedValuePath="id" Text="Proizvodjac">
+            </ComboBox>
+            <TextBox x:Name="ModelTextBox" Style="{StaticResource RadiusTextBox}" Width="150">
+                Naziv modela
+            </TextBox>
+            <TextBox x:Name="CijenaTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 0 20 0">
+                Cijena modela
+            </TextBox>
+            <Button x:Name="ModelButton" Click="AddModel">Dodaj</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Margin="0 0 20 0">Boja:</Label>
+            <TextBox x:Name="BojaTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 0 20 0"/>
+            <Button x:Name="BojaButton" Click="AddBoja">Dodaj</Button>
+        </StackPanel>
+        <WrapPanel Grid.Row="3" Orientation="Horizontal">
+            <Label Margin="0 0 20 0">Prodavac:</Label>
+                <TextBox x:Name="ImeTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 0 20 0">Ime</TextBox>
+                <TextBox x:Name="PrezimeTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 0 20 0">Prezime</TextBox>
+                <ComboBox SelectionChanged="SetUloga" x:Name="UlogeComboBox" Width="150"></ComboBox>
+                <TextBox x:Name="UsernameTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 20 20 0">Username</TextBox>
+                <TextBox x:Name="PasswordTextBox" Style="{StaticResource RadiusTextBox}" Width="150" Margin="0 20 20 0">Password</TextBox>
+                <Button x:Name="ProdavacButton" Click="AddProdavac" Margin="0 20 20 0">Dodaj</Button>
+            </WrapPanel>
     </Grid>
 </Window>

@@ -7,13 +7,12 @@
         <Grid.Resources>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="20"></Setter>
-                <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
                 <Setter Property="Margin" Value=" 0 0 0 5"></Setter>
 
             </Style>
             <Style TargetType="TextBox">
-                <Setter Property="Height" Value="30"></Setter>
                 <Setter Property="BorderThickness" Value="0 0  0 2"></Setter>
                 <Setter Property="BorderBrush" Value="Black"></Setter>
                 <Setter Property="FontSize" Value="20"></Setter>
@@ -25,8 +24,15 @@
                 <Setter Property="FontSize" Value="20"></Setter>
                 <Setter Property="Margin" Value=" 0 0 0 1"></Setter>
             </Style>
+            <Style TargetType="ToggleButton">
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" Value="Teal" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
         </Grid.Resources>
-        <Grid Height="100" Width="400" VerticalAlignment="Bottom" Margin="0 0 175 80">
+        <Grid Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 80">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -37,10 +43,10 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0">Username:</Label>
             <Label Grid.Column="0" Grid.Row="1">Password:</Label>
-            <TextBox x:Name="UsernameTextBox" Grid.Row="0" Grid.Column="1"></TextBox>
-            <PasswordBox x:Name="PasswordBox" Grid.Row="1" Grid.Column="1"></PasswordBox>
+            <TextBox x:Name="UsernameTextBox" Style="{StaticResource RadiusTextBox}" Grid.Row="0" Grid.Column="1"></TextBox>
+            <PasswordBox Width="240" x:Name="PasswordPasswordBox"  BorderBrush="#C9C9C9" BorderThickness="0 0 0 3" Grid.Row="1" Grid.Column="1"></PasswordBox>
         </Grid>
         <Button Height="40" Width="100" VerticalAlignment="Bottom" Margin="30" Click="LoginButton">Login</Button>
-        <Image Source="../Images/car.png" Height="250" Width="250" Margin="30" VerticalAlignment="Top" HorizontalAlignment="Center"></Image>
+        <Image Source="../Images/car.png" Height="250" Width="250" Margin="30" VerticalAlignment="Top" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

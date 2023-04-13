@@ -49,3 +49,4 @@ C:\Users\snari\RiderProjects\AutoSalon_HCI\AutoSalon_HCI\obj\Debug\Windows\AddCu
 C:\Users\snari\RiderProjects\AutoSalon_HCI\AutoSalon_HCI\obj\Debug\Windows\Configuration.baml
 C:\Users\snari\RiderProjects\AutoSalon_HCI\AutoSalon_HCI\obj\Debug\Windows\Order.baml
 C:\Users\snari\RiderProjects\AutoSalon_HCI\AutoSalon_HCI\obj\Debug\Windows\OrderList.baml
+C:\Users\snari\RiderProjects\AutoSalon_HCI\AutoSalon_HCI\obj\Debug\Windows\App.baml

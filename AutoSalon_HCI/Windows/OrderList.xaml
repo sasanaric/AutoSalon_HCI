@@ -5,8 +5,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AutoSalon_HCI.Windows"
         mc:Ignorable="d"
-        Title="OrderList" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="OrderList" Height="500" Width="1000">
     <Grid>
-        
+        <ListView x:Name="NarudzbeListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Datum Narudžbe" DisplayMemberBinding="{Binding datumNarudzbe}" />
+                    <GridViewColumn Header="Datum Isporuke" DisplayMemberBinding="{Binding datumIsporuke}" />
+                    <GridViewColumn Header="Proizvođač" DisplayMemberBinding="{Binding proizvodjac}" />
+                    <GridViewColumn Header="Model" DisplayMemberBinding="{Binding model}" />
+                    <GridViewColumn Header="Tip Motora" DisplayMemberBinding="{Binding tipMotora}" />
+                    <GridViewColumn Header="Oprema" DisplayMemberBinding="{Binding oprema}" />
+                    <GridViewColumn Header="Boja" DisplayMemberBinding="{Binding boja}" />
+                    <GridViewColumn Header="Cijena" DisplayMemberBinding="{Binding cijena}" />
+                    <GridViewColumn Header="Prodavac" DisplayMemberBinding="{Binding prodavac}" />
+                    <GridViewColumn Header="Kupac" DisplayMemberBinding="{Binding kupac}" />
+                    <GridViewColumn Header="Registracijska Oznaka" DisplayMemberBinding="{Binding registracijskaOznaka}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>
